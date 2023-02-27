@@ -1,3 +1,11 @@
+.icon-code, .icon-storage, .icon-save, .icon-folder-open {
+  display: none!important;
+}
+
+.editor__canvas {
+  /* display: none; */
+}
+
 /* --------------------------------------------------------------
          css/ui-lightness/jquery-ui-1.10.1.custom.css
    -------------------------------------------------------------- */
@@ -1179,7 +1187,7 @@ body .ui-tooltip {
 /* --------------------------------------------------------------
          css/libs/jquery.treeview.css
    -------------------------------------------------------------- */
-.treeview, .treeview ul { 
+.treeview, .treeview ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -1204,7 +1212,7 @@ body .ui-tooltip {
 	float:none;
 }
 
-.treeview li { 
+.treeview li {
 	margin: 0;
 	padding: 3px 0pt 3px 16px;
 }
@@ -1223,23 +1231,23 @@ body .ui-tooltip {
 .treeview .expandable-hitarea { background-position: -80px -3px; }
 
 .treeview li.last { background-position: 0 -1766px }
-.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(css/libs/images/treeview-default.gif); }  
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(css/libs/images/treeview-default.gif); }
 .treeview li.lastCollapsable { background-position: 0 -111px }
 .treeview li.lastExpandable { background-position: -32px -67px }
 
 .treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
 
 .treeview-red li { background-image: url(css/libs/images/treeview-red-line.gif); }
-.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(css/libs/images/treeview-red.gif); } 
+.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(css/libs/images/treeview-red.gif); }
 
 .treeview-black li { background-image: url(css/libs/images/treeview-black-line.gif); }
-.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(css/libs/images/treeview-black.gif); }  
+.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(css/libs/images/treeview-black.gif); }
 
 .treeview-gray li { background-image: url(css/libs/images/treeview-gray-line.gif); }
-.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(css/libs/images/images/treeview-gray.gif); } 
+.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(css/libs/images/images/treeview-gray.gif); }
 
 .treeview-famfamfam li { background-image: url(css/libs/images/treeview-famfamfam-line.gif); }
-.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(css/libs/images/treeview-famfamfam.gif); } 
+.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(css/libs/images/treeview-famfamfam.gif); }
 
 
 .filetree li { padding: 3px 0 2px 16px; }
@@ -1922,9 +1930,9 @@ li.CodeMirror-hint-active {
 /*
  * Toastr
  * Version 2.0.1
- * Copyright 2012 John Papa and Hans Fjällemark.  
- * All Rights Reserved.  
- * Use, reproduction, distribution, and modification of this code is subject to the terms and 
+ * Copyright 2012 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
  * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
  *
  * Author: John Papa and Hans Fjällemark
@@ -2093,7 +2101,7 @@ button.toast-close-button {
   z-index: 900001 !important;
 }
 
-.guiders_arrow 
+.guiders_arrow
 {
   /*width: 42px;
   height: 42px;
@@ -2101,7 +2109,7 @@ button.toast-close-button {
   display: none;
   background-repeat: no-repeat;
   z-index: 900002 !important;*/
-  
+
   display: none;
   position: absolute;
   border-style: solid;
@@ -2113,7 +2121,7 @@ button.toast-close-button {
 
   /**
    * For optimization, the arrows image is inlined in the css below.
-   * 
+   *
    * To use your own arrows image, replace this background-image with your own arrows.
    * It should have four arrows, top, right, left, and down.
    *
@@ -2195,7 +2203,7 @@ button.toast-close-button {
   font-size: 100%;
 }
 
-.guiders_description a 
+.guiders_description a
 {
   color: #3498db;
 }
@@ -2231,7 +2239,7 @@ button.toast-close-button {
 /* --------------------------------------------------------------
          css/reset.css
    -------------------------------------------------------------- */
-/* 
+/*
     ===================================================
     Reset
     ===================================================
@@ -2247,14 +2255,14 @@ button.toast-close-button {
 }*/
 
 *, *:before, *:after {
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 /* --------------------------------------------------------------
          css/main.css
    -------------------------------------------------------------- */
-/* 
+/*
   ===================================================
   Main
   ===================================================
@@ -2284,13 +2292,13 @@ dd {
   font-style: italic;
 }
 
-::-webkit-scrollbar 
+::-webkit-scrollbar
 {
   background: #ecf0f1;
   width: 15px;
 }
 
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb
 {
     background: #bdc3c7;
   border: 5px solid #ecf0f1;
@@ -2305,23 +2313,23 @@ dd {
 /* --------------------------------------------------------------
          css/typography.css
    -------------------------------------------------------------- */
-/* 
+/*
   ===================================================
   Typography
   ===================================================
 */
 
-h1 
+h1
 {
 	margin-top: 0;
 }
 
-h1 img 
+h1 img
 {
 	vertical-align: middle;
 }
 
-.settings h1 
+.settings h1
 {
 	text-transform: uppercase;
 	color: #42484a;
@@ -2329,7 +2337,7 @@ h1 img
 	border-bottom: 1px solid #ccc;
 }
 
-.settings a 
+.settings a
 {
 	color: #3498db;
 }
@@ -2694,7 +2702,7 @@ a:hover > .menu
 .split-pane
 {
 	position: absolute;
-	margin-top: 60px;
+	/* margin-top: 60px; */
 	top: 0;
 	right: 0;
 	bottom: 30px;
@@ -2897,7 +2905,7 @@ a:hover > .menu
 
 .terminalSnippets
 {
-paddi   ng-left: 15px;
+padding-left: 15px;
 }
 
 .terminalSnippet
@@ -3266,7 +3274,6 @@ paddi   ng-left: 15px;
 .compact .toolbar .toolbar__buttons--right .menu { top: 30px; }
 .compact .sidebar .sidebar__buttons--top .menu { left: 30px; }
 .compact .sidebar .sidebar__buttons--bottom .menu { left: 30px; }
-.compact .split-pane { margin-top: 30px; }
 .compact .editor__canvas { left: 30px; }
 .compact .sidebar {  width: 30px; }
 .compact .button { height: 30px; padding: 0; }

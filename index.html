@@ -17,7 +17,10 @@
       content="AjRdPA+O3VUML2r8/U0gIUmgBgZLDktY1Kypa8hjMesuKpbfYhXRrWHgjGp7f2Yd5sM36E4+TZdkSHewx27wOgUAAABQeyJvcmlnaW4iOiJodHRwczovL3d3dy5lc3BydWluby5jb206NDQzIiwiZmVhdHVyZSI6IlNlcmlhbCIsImV4cGlyeSI6MTU4OTM1NzgxNn0="
     />
 
-    <link rel="icon" href="https://www.espruino.com/ide/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://impulse.training/images/favicon/apple-icon-60x60.png"
+    />
     <link
       rel="manifest"
       href="https://www.espruino.com/ide/webapp_manifest.json"
@@ -32,74 +35,9 @@
         window.location = "https://" + l.substr(7);
     </script>
 
-    <title>Espruino Web IDE</title>
-    <script
-      type="module"
-      src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"
-    ></script>
-    <style type="text/css">
-      .jqstooltip {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        visibility: hidden;
-        background: rgb(0, 0, 0) transparent;
-        background-color: rgba(0, 0, 0, 0.6);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        color: white;
-        font: 10px arial, san serif;
-        text-align: left;
-        white-space: nowrap;
-        padding: 5px;
-        border: 1px solid white;
-        z-index: 10000;
-      }
-      .jqsfield {
-        color: white;
-        font: 10px arial, san serif;
-        text-align: left;
-      }
-    </style>
-    <style type="text/css">
-      @font-face {
-        font-weight: 400;
-        font-style: normal;
-        font-family: "Circular-Loom";
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2")
-          format("woff2");
-      }
-
-      @font-face {
-        font-weight: 500;
-        font-style: normal;
-        font-family: "Circular-Loom";
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2")
-          format("woff2");
-      }
-
-      @font-face {
-        font-weight: 700;
-        font-style: normal;
-        font-family: "Circular-Loom";
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2")
-          format("woff2");
-      }
-
-      @font-face {
-        font-weight: 900;
-        font-style: normal;
-        font-family: "Circular-Loom";
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2")
-          format("woff2");
-      }
-    </style>
+    <title>Impulse Firmware Sync</title>
   </head>
-  <body style="">
+  <body>
     <div class="window">
       <!-- Title Bar -->
 
@@ -181,157 +119,6 @@
                 </div>
               </div>
               <div class="canvas editor__canvas editor__canvas__terminal">
-                <div id="terminal" class="terminal" style="font-size: 12px">
-                  <div style="max-width: 400px; margin: auto">
-                    <p>
-                      <a href="http://www.espruino.com/Web+IDE" target="_blank"
-                        ><img
-                          src="./dist/ide_logo.png"
-                          width="299"
-                          height="96"
-                          alt="Espruino IDE"
-                      /></a>
-                    </p>
-                    <p id="versioninfo" style="text-align: right">
-                      Web App, v0.76.4
-                    </p>
-                    <p style="text-align: center; font-weight: bold">
-                      A Code Editor and Terminal for
-                      <a href="http://www.espruino.com/" target="_blank"
-                        >Espruino JavaScript Microcontrollers</a
-                      >
-                    </p>
-                    <p>
-                      Try the
-                      <a class="tour_link" href="https://www.espruino.com/ide/#"
-                        >guided tour</a
-                      >
-                      and
-                      <a
-                        href="http://www.espruino.com/Quick+Start"
-                        target="_blank"
-                        >getting started</a
-                      >
-                      guide for more information, tutorials and example
-                      projects.
-                    </p>
-                    <div id="terminalnews">
-                      <h2>Recent News</h2>
-                      <ul>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/383528"
-                            target="_blank"
-                            >Espruino at FOSDEM 2023 (Feb 4/5 2023)</a
-                          ><span style="float: right">1 Feb</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/382377"
-                            target="_blank"
-                            >Happy Holidays 2022! 🎄 Out of Office (20 Dec - 4
-                            Jan)</a
-                          ><span style="float: right">15 Dec</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/381600"
-                            target="_blank"
-                            >Espruino 2v16 released</a
-                          ><span style="float: right">17 Nov</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/374646"
-                            target="_blank"
-                            >Espruino 2v13 released</a
-                          ><span style="float: right">6 Apr</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/368153"
-                            target="_blank"
-                            >Bangle.js 2 now on KickStarter</a
-                          ><span style="float: right">22 Sept</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/366782"
-                            target="_blank"
-                            >Espruino 2v10</a
-                          ><span style="float: right">13 Aug</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/362761"
-                            target="_blank"
-                            >Espruino 2v09</a
-                          ><span style="float: right">19 Apr</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/357840"
-                            target="_blank"
-                            >Christmas Holidays 2020</a
-                          ><span style="float: right">18 Dec</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/355513"
-                            target="_blank"
-                            >Espruino App Loader</a
-                          ><span style="float: right">23 Oct</span>
-                        </li>
-                        <li>
-                          <a
-                            href="http://forum.espruino.com/conversations/355172"
-                            target="_blank"
-                            >Special Offers on shop.espruino.com!</a
-                          ><span style="float: right">16 Oct</span>
-                        </li>
-                      </ul>
-                      <p></p>
-                    </div>
-                    <p>
-                      Espruino is
-                      <a href="https://github.com/espruino" target="_blank"
-                        >Open Source</a
-                      >. Please support us by
-                      <a href="http://www.espruino.com/Donate" target="_blank"
-                        >donating</a
-                      >
-                      or
-                      <a href="http://www.espruino.com/Order" target="_blank"
-                        >buying an official board</a
-                      >.
-                    </p>
-                    <p style="text-align: right">
-                      <a href="http://twitter.com/Espruino" target="_blank"
-                        ><img
-                          src="./dist/icon_twitter.png"
-                          width="16"
-                          height="16"
-                          alt="Follow on Twitter"
-                      /></a>
-                      <a
-                        href="http://youtube.com/subscription_center?add_user=espruino"
-                        target="_blank"
-                        ><img
-                          src="./dist/icon_youtube.png"
-                          width="44"
-                          height="16"
-                          alt="Subscribe on YouTube"
-                      /></a>
-                      <a href="https://www.patreon.com/espruino" target="_blank"
-                        ><img
-                          src="./dist/icon_patreon.png"
-                          width="45"
-                          height="16"
-                          alt="Support on Patreon"
-                      /></a>
-                    </p>
-                  </div>
-                </div>
                 <div
                   id="divTesting"
                   class="Testing"
@@ -885,35 +672,7 @@ number"
                 <div class="v-split">
                   <div
                     class="v-split__top sidebar__buttons sidebar__buttons--top"
-                  >
-                    <a
-                      id="icon-openFile"
-                      class="icon-folder-open lrg icon--hasinfo"
-                      title="Open File"
-                      data-icon-order="100"
-                      ><span class="icon__info">open</span
-                      ><span class="icon__more">▼</span></a
-                    ><a
-                      id="icon-saveFile"
-                      class="icon-save lrg"
-                      title="Save File"
-                      data-icon-order="200"
-                    ></a
-                    ><a
-                      id="icon-storage"
-                      class="icon-storage lrg"
-                      title="Access files in device&#39;s storage"
-                      data-icon-order="300"
-                    ></a
-                    ><a
-                      id="icon-deploy"
-                      class="icon-deploy lrg icon--hasinfo"
-                      title="Send to Espruino"
-                      data-icon-order="400"
-                      ><span class="icon__info">Flash</span
-                      ><span class="icon__more">▼</span></a
-                    >
-                  </div>
+                  ></div>
                   <div
                     class="v-split__bottom sidebar__buttons sidebar__buttons--bottom"
                   >
@@ -1115,15 +874,8 @@ number"
         <!-- Status -->
         <div class="status">
           <div class="h-split">
-            <div class="h-split__left status__left">
-              <h5 class="status__message">Ready...</h5>
-            </div>
-            <div class="h-split__right status__right">
-              <h5 class="status__port"></h5>
-              <div class="status__progress" style="display: none">
-                <div class="status__progress-bar"></div>
-              </div>
-            </div>
+            <div class="h-split__left status__left"></div>
+            <div class="h-split__right status__right"></div>
           </div>
         </div>
       </div>
@@ -1477,16 +1229,5 @@ number"
       </div>
       <div class="guiders_arrow"></div>
     </div>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css"
-      class="loom-blur-styles"
-    />
   </body>
-  <loom-container id="lo-engage-ext-container"
-    ><loom-shadow classname="resolved"></loom-shadow></loom-container
-  ><loom-container id="lo-companion-container"
-    ><loom-shadow classname="resolved"></loom-shadow
-  ></loom-container>
 </html>
