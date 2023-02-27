@@ -1,0 +1,993 @@
+
+<!-- saved from url=(0088)https://www.espruino.com/ide/blockly/blockly.html?lang=en&Enable=%7Cbluetooth%7Crobot%7C -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.blocklyDraggable {}
+.blocklySvg {
+background-color: #fff;
+outline: none;
+overflow: hidden;
+position: absolute;
+display: block;
+}
+.blocklyWidgetDiv {
+display: none;
+position: absolute;
+z-index: 99999;
+}
+.injectionDiv {
+height: 100%;
+position: relative;
+overflow: hidden;
+touch-action: none
+}
+.blocklyNonSelectable {
+user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-webkit-user-select: none;
+}
+.blocklyWsDragSurface {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+}
+.blocklyWsDragSurface.blocklyOverflowVisible {
+overflow: visible;
+}
+.blocklyBlockDragSurface {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+overflow: visible !important;
+z-index: 50;
+}
+.blocklyTooltipDiv {
+background-color: #ffffc7;
+border: 1px solid #ddc;
+box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+color: #000;
+display: none;
+font-family: sans-serif;
+font-size: 9pt;
+opacity: .9;
+padding: 2px;
+position: absolute;
+z-index: 100000;
+}
+.blocklyResizeSE {
+cursor: se-resize;
+fill: #aaa;
+}
+.blocklyResizeSW {
+cursor: sw-resize;
+fill: #aaa;
+}
+.blocklyResizeLine {
+stroke: #888;
+stroke-width: 1;
+}
+.blocklyHighlightedConnectionPath {
+fill: none;
+stroke: #fc3;
+stroke-width: 4px;
+}
+.blocklyPathLight {
+fill: none;
+stroke-linecap: round;
+stroke-width: 1;
+}
+.blocklySelected>.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.blocklySelected>.blocklyPathLight {
+display: none;
+}
+.blocklyDraggable {
+cursor: url("media/handopen.cur"), auto;
+cursor: grab;
+cursor: -webkit-grab;
+}
+.blocklyDragging {
+cursor: url("media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyDraggable:active {
+cursor: url("media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyBlockDragSurface .blocklyDraggable {
+cursor: url("media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyDragging.blocklyDraggingDelete {
+cursor: url("media/handdelete.cur"), auto;
+}
+.blocklyToolboxDelete {
+cursor: url("media/handdelete.cur"), auto;
+}
+.blocklyToolboxGrab {
+cursor: url("media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyDragging>.blocklyPath,
+.blocklyDragging>.blocklyPathLight {
+fill-opacity: .8;
+stroke-opacity: .8;
+}
+.blocklyDragging>.blocklyPathDark {
+display: none;
+}
+.blocklyDisabled>.blocklyPath {
+fill-opacity: .5;
+stroke-opacity: .5;
+}
+.blocklyDisabled>.blocklyPathLight,
+.blocklyDisabled>.blocklyPathDark {
+display: none;
+}
+.blocklyText {
+cursor: default;
+fill: #fff;
+font-family: sans-serif;
+font-size: 11pt;
+}
+.blocklyNonEditableText>text {
+pointer-events: none;
+}
+.blocklyNonEditableText>rect,
+.blocklyEditableText>rect {
+fill: #fff;
+fill-opacity: .6;
+}
+.blocklyNonEditableText>text,
+.blocklyEditableText>text {
+fill: #000;
+}
+.blocklyEditableText:hover>rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.blocklyBubbleText {
+fill: #000;
+}
+.blocklyFlyout {
+position: absolute;
+z-index: 20;
+}
+.blocklyFlyoutButton {
+fill: #888;
+cursor: default;
+}
+.blocklyFlyoutButtonShadow {
+fill: #666;
+}
+.blocklyFlyoutButton:hover {
+fill: #aaa;
+}
+.blocklyFlyoutLabel {
+cursor: default;
+}
+.blocklyFlyoutLabelBackground {
+opacity: 0;
+}
+.blocklyFlyoutLabelText {
+fill: #000;
+}
+.blocklySvg text, .blocklyBlockDragSurface text {
+user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-webkit-user-select: none;
+cursor: inherit;
+}
+.blocklyHidden {
+display: none;
+}
+.blocklyFieldDropdown:not(.blocklyHidden) {
+display: block;
+}
+.blocklyIconGroup {
+cursor: default;
+}
+.blocklyIconGroup:not(:hover),
+.blocklyIconGroupReadonly {
+opacity: .6;
+}
+.blocklyIconShape {
+fill: #00f;
+stroke: #fff;
+stroke-width: 1px;
+}
+.blocklyIconSymbol {
+fill: #fff;
+}
+.blocklyMinimalBody {
+margin: 0;
+padding: 0;
+}
+.blocklyCommentTextarea {
+background-color: #ffc;
+border: 0;
+outline: 0;
+margin: 0;
+padding: 2px;
+resize: none;
+display: block;
+overflow: hidden;
+}
+.blocklyHtmlInput {
+border: none;
+border-radius: 4px;
+font-family: sans-serif;
+height: 100%;
+margin: 0;
+outline: none;
+padding: 0 1px;
+width: 100%
+}
+.blocklyMainBackground {
+stroke-width: 1;
+stroke: #c6c6c6;
+}
+.blocklyMutatorBackground {
+fill: #fff;
+stroke: #ddd;
+stroke-width: 1;
+}
+.blocklyFlyoutBackground {
+fill: #ddd;
+fill-opacity: .8;
+}
+.blocklyTransparentBackground {
+opacity: 0;
+}
+.blocklyMainWorkspaceScrollbar {
+z-index: 20;
+}
+.blocklyFlyoutScrollbar {
+z-index: 30;
+}
+.blocklyScrollbarHorizontal, .blocklyScrollbarVertical {
+position: absolute;
+outline: none;
+}
+.blocklyScrollbarBackground {
+opacity: 0;
+}
+.blocklyScrollbarHandle {
+fill: #ccc;
+}
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+fill: #bbb;
+}
+.blocklyZoom>image {
+opacity: .4;
+}
+.blocklyZoom>image:hover {
+opacity: .6;
+}
+.blocklyZoom>image:active {
+opacity: .8;
+}
+.blocklyFlyout .blocklyScrollbarHandle {
+fill: #bbb;
+}
+.blocklyFlyout .blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyFlyout .blocklyScrollbarHandle:hover {
+fill: #aaa;
+}
+.blocklyInvalidInput {
+background: #faa;
+}
+.blocklyAngleCircle {
+stroke: #444;
+stroke-width: 1;
+fill: #ddd;
+fill-opacity: .8;
+}
+.blocklyAngleMarks {
+stroke: #444;
+stroke-width: 1;
+}
+.blocklyAngleGauge {
+fill: #f88;
+fill-opacity: .8;
+}
+.blocklyAngleLine {
+stroke: #f00;
+stroke-width: 2;
+stroke-linecap: round;
+pointer-events: none;
+}
+.blocklyContextMenu {
+border-radius: 4px;
+}
+.blocklyDropdownMenu {
+padding: 0 !important;
+max-height: 300px !important;
+}
+.blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,
+.blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {
+background: url(media/sprites.png) no-repeat -48px -16px !important;
+}
+.blocklyToolboxDiv {
+background-color: #ddd;
+overflow-x: visible;
+overflow-y: auto;
+position: absolute;
+user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-webkit-user-select: none;
+z-index: 70;
+-webkit-tap-highlight-color: transparent;
+}
+.blocklyTreeRoot {
+padding: 4px 0;
+}
+.blocklyTreeRoot:focus {
+outline: none;
+}
+.blocklyTreeRow {
+height: 22px;
+line-height: 22px;
+margin-bottom: 3px;
+padding-right: 8px;
+white-space: nowrap;
+}
+.blocklyHorizontalTree {
+float: left;
+margin: 1px 5px 8px 0;
+}
+.blocklyHorizontalTreeRtl {
+float: right;
+margin: 1px 0 8px 5px;
+}
+.blocklyToolboxDiv[dir="RTL"] .blocklyTreeRow {
+margin-left: 8px;
+}
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+background-color: #e4e4e4;
+}
+.blocklyTreeSeparator {
+border-bottom: solid #e5e5e5 1px;
+height: 0;
+margin: 5px 0;
+}
+.blocklyTreeSeparatorHorizontal {
+border-right: solid #e5e5e5 1px;
+width: 0;
+padding: 5px 0;
+margin: 0 5px;
+}
+.blocklyTreeIcon {
+background-image: url(media/sprites.png);
+height: 16px;
+vertical-align: middle;
+width: 16px;
+}
+.blocklyTreeIconClosedLtr {
+background-position: -32px -1px;
+}
+.blocklyTreeIconClosedRtl {
+background-position: 0 -1px;
+}
+.blocklyTreeIconOpen {
+background-position: -16px -1px;
+}
+.blocklyTreeSelected>.blocklyTreeIconClosedLtr {
+background-position: -32px -17px;
+}
+.blocklyTreeSelected>.blocklyTreeIconClosedRtl {
+background-position: 0 -17px;
+}
+.blocklyTreeSelected>.blocklyTreeIconOpen {
+background-position: -16px -17px;
+}
+.blocklyTreeIconNone,
+.blocklyTreeSelected>.blocklyTreeIconNone {
+background-position: -48px -1px;
+}
+.blocklyTreeLabel {
+cursor: default;
+font-family: sans-serif;
+font-size: 16px;
+padding: 0 3px;
+vertical-align: middle;
+}
+.blocklyToolboxDelete .blocklyTreeLabel {
+cursor: url("media/handdelete.cur"), auto;
+}
+.blocklyTreeSelected .blocklyTreeLabel {
+color: #fff;
+}
+.blocklyWidgetDiv .goog-palette {
+outline: none;
+cursor: default;
+}
+.blocklyWidgetDiv .goog-palette-table {
+border: 1px solid #666;
+border-collapse: collapse;
+}
+.blocklyWidgetDiv .goog-palette-cell {
+height: 13px;
+width: 15px;
+margin: 0;
+border: 0;
+text-align: center;
+vertical-align: middle;
+border-right: 1px solid #666;
+font-size: 1px;
+}
+.blocklyWidgetDiv .goog-palette-colorswatch {
+position: relative;
+height: 13px;
+width: 15px;
+border: 1px solid #666;
+}
+.blocklyWidgetDiv .goog-palette-cell-hover .goog-palette-colorswatch {
+border: 1px solid #FFF;
+}
+.blocklyWidgetDiv .goog-palette-cell-selected .goog-palette-colorswatch {
+border: 1px solid #000;
+color: #fff;
+}
+.blocklyWidgetDiv .goog-menu {
+background: #fff;
+border-color: #ccc #666 #666 #ccc;
+border-style: solid;
+border-width: 1px;
+cursor: default;
+font: normal 13px Arial, sans-serif;
+margin: 0;
+outline: none;
+padding: 4px 0;
+position: absolute;
+overflow-y: auto;
+overflow-x: hidden;
+max-height: 100%;
+z-index: 20000;
+}
+.blocklyWidgetDiv .goog-menuitem {
+color: #000;
+font: normal 13px Arial, sans-serif;
+list-style: none;
+margin: 0;
+padding: 4px 7em 4px 28px;
+white-space: nowrap;
+}
+.blocklyWidgetDiv .goog-menuitem.goog-menuitem-rtl {
+padding-left: 7em;
+padding-right: 28px;
+}
+.blocklyWidgetDiv .goog-menu-nocheckbox .goog-menuitem,
+.blocklyWidgetDiv .goog-menu-noicon .goog-menuitem {
+padding-left: 12px;
+}
+.blocklyWidgetDiv .goog-menu-noaccel .goog-menuitem {
+padding-right: 20px;
+}
+.blocklyWidgetDiv .goog-menuitem-content {
+color: #000;
+font: normal 13px Arial, sans-serif;
+}
+.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-accel,
+.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-content {
+color: #ccc !important;
+}
+.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-icon {
+opacity: 0.3;
+filter: alpha(opacity=30);
+}
+.blocklyWidgetDiv .goog-menuitem-highlight,
+.blocklyWidgetDiv .goog-menuitem-hover {
+background-color: #d6e9f8;
+border-color: #d6e9f8;
+border-style: dotted;
+border-width: 1px 0;
+padding-bottom: 3px;
+padding-top: 3px;
+}
+.blocklyWidgetDiv .goog-menuitem-checkbox,
+.blocklyWidgetDiv .goog-menuitem-icon {
+background-repeat: no-repeat;
+height: 16px;
+left: 6px;
+position: absolute;
+right: auto;
+vertical-align: middle;
+width: 16px;
+}
+.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-checkbox,
+.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-icon {
+left: auto;
+right: 6px;
+}
+.blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,
+.blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {
+background: url(//ssl.gstatic.com/editor/editortoolbar.png) no-repeat -512px 0;
+}
+.blocklyWidgetDiv .goog-menuitem-accel {
+color: #999;
+direction: ltr;
+left: auto;
+padding: 0 6px;
+position: absolute;
+right: 0;
+text-align: right;
+}
+.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-accel {
+left: 0;
+right: auto;
+text-align: left;
+}
+.blocklyWidgetDiv .goog-menuitem-mnemonic-hint {
+text-decoration: underline;
+}
+.blocklyWidgetDiv .goog-menuitem-mnemonic-separator {
+color: #999;
+font-size: 12px;
+padding-left: 4px;
+}
+.blocklyWidgetDiv .goog-menuseparator {
+border-top: 1px solid #ccc;
+margin: 4px 0;
+padding: 0;
+}
+</style>
+    
+    <script type="text/javascript" src="./blockly_compressed.js"></script>
+    <script type="text/javascript" src="./blocks_compressed.js"></script>
+    <script type="text/javascript" src="./en.js"></script>
+    <script type="text/javascript" src="./ru.js"></script>
+    <script type="text/javascript" src="./de.js"></script>
+    <script type="text/javascript" src="./javascript_compressed.js"></script>
+    <script type="text/javascript" src="./blockly_espruino.js"></script>
+    <script type="text/javascript" src="./blockly_menu.js"></script>
+    <script type="text/javascript" src="./blockly_gfx.js"></script>
+    <script type="text/javascript" src="./blockly_robot.js"></script>
+    <script type="text/javascript" src="./blockly_ble.js"></script>
+    <script type="text/javascript" src="./blockly_nordic_thingy.js"></script>
+    <script type="text/javascript" src="./blockly_smartibot.js"></script>
+    <script type="text/javascript" src="./blockly_bangle.js"></script>
+    <script type="text/javascript" src="./field_textarea.js"></script>
+    <script type="text/javascript" src="./imageconverter.js"></script>
+    <style>
+      html, body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .blocklySvg {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+  <!-- Blockly toolbox -->
+  <xml id="toolbox" style="display: none">
+    <category name="Logic" colour="%{BKY_LOGIC_HUE}">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_ternary"></block>
+    </category>
+    <category name="Control" colour="%{BKY_LOOPS_HUE}">
+      <block type="espruino_delay">
+        <value name="SECONDS"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="espruino_timeout">
+        <value name="SECONDS"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="espruino_interval">
+        <value name="SECONDS"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <block type="math_number">
+            <title name="NUM">10</title>
+          </block>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <block type="math_number">
+            <title name="NUM">1</title>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <title name="NUM">10</title>
+          </block>
+        </value>
+        <value name="BY">
+          <block type="math_number">
+            <title name="NUM">1</title>
+          </block>
+        </value>
+      </block>
+      <block type="controls_forEach"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category name="Math" colour="%{BKY_MATH_HUE}">
+      <block type="math_number">
+        <title name="NUM">0</title>
+      </block>
+      <block type="math_arithmetic">
+        <title name="OP">ADD</title>
+      </block>
+      <block type="math_single">
+        <title name="OP">ROOT</title>
+      </block>
+      <block type="math_trig">
+        <title name="OP">SIN</title>
+      </block>
+      <block type="math_constant">
+        <title name="CONSTANT">PI</title>
+      </block>
+      <block type="math_number_property">
+        <mutation divisor_input="false"></mutation>
+        <title name="PROPERTY">EVEN</title>
+      </block>
+      <block type="math_change">
+        <title name="VAR">item</title>
+        <value name="DELTA">
+          <block type="math_number">
+            <title name="NUM">1</title>
+          </block>
+        </value>
+      </block>
+      <block type="math_round">
+        <title name="OP">ROUND</title>
+      </block>
+      <block type="math_on_list">
+        <title name="OP">SUM</title>
+      </block>
+      <block type="math_modulo"></block>
+      <block type="math_constrain">
+        <value name="LOW">
+          <block type="math_number">
+            <title name="NUM">1</title>
+          </block>
+        </value>
+        <value name="HIGH">
+          <block type="math_number">
+            <title name="NUM">100</title>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <block type="math_number">
+            <title name="NUM">1</title>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <title name="NUM">100</title>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+    </category>
+    <category name="Text" colour="%{BKY_TEXTS_HUE}">
+      <block type="text">
+        <title name="TEXT"></title>
+      </block>
+      <block type="text_join" inline="false">
+        <mutation items="2"></mutation>
+      </block>
+      <block type="text_append" inline="false">
+        <title name="VAR">item</title>
+        <value name="TEXT">
+          <block type="text">
+            <title name="TEXT"></title>
+          </block>
+        </value>
+      </block>
+      <block type="text_length" inline="false"></block>
+      <block type="text_isEmpty" inline="true"></block>
+      <block type="text_indexOf" inline="true">
+        <title name="END">FIRST</title>
+        <value name="VALUE">
+          <block type="variables_get">
+            <title name="VAR">text</title>
+          </block>
+        </value>
+      </block>
+      <block type="text_charAt" inline="true">
+        <mutation at="true"></mutation>
+        <title name="WHERE">FROM_START</title>
+        <value name="VALUE">
+          <block type="variables_get">
+            <title name="VAR">text</title>
+          </block>
+        </value>
+      </block>
+      <block type="text_getSubstring" inline="true">
+        <mutation at1="true" at2="true"></mutation>
+        <title name="WHERE1">FROM_START</title>
+        <title name="WHERE2">FROM_START</title>
+        <value name="STRING">
+          <block type="variables_get">
+            <title name="VAR">text</title>
+          </block>
+        </value>
+      </block>
+      <block type="text_changeCase" inline="false">
+        <title name="CASE">UPPERCASE</title>
+      </block>
+      <block type="text_trim" inline="false">
+        <title name="MODE">BOTH</title>
+      </block>
+      <block type="text_print" inline="false">
+        <value name="TEXT"><block type="text"><title name="TEXT">Hello</title></block></value>
+      </block>
+    </category>
+    <category name="Lists" colour="%{BKY_LISTS_HUE}">
+      <block type="variables_set"><title name="VAR">list</title><value name="VALUE">
+          <block type="lists_create_empty"></block>
+      </value></block>
+      <block type="variables_set"><title name="VAR">list</title><value name="VALUE">
+        <block type="lists_create_with" inline="false">
+          <mutation items="3"></mutation>
+        </block>
+      </value></block>
+      <block type="variables_set"><title name="VAR">list</title><value name="VALUE">
+        <block type="lists_repeat" inline="true">
+          <value name="NUM">
+            <block type="math_number">
+              <title name="NUM">5</title>
+            </block>
+          </value>
+        </block>
+      </value></block>
+      <block type="lists_length" inline="false"></block>
+      <block type="lists_isEmpty" inline="true"></block>
+      <block type="lists_indexOf" inline="true">
+        <title name="END">FIRST</title>
+        <value name="VALUE">
+          <block type="variables_get">
+            <title name="VAR">list</title>
+          </block>
+        </value>
+      </block>
+      <block type="lists_getIndex" inline="true">
+        <mutation statement="false" at="true"></mutation>
+        <title name="MODE">GET</title>
+        <title name="WHERE">FROM_START</title>
+        <value name="VALUE">
+          <block type="variables_get">
+            <title name="VAR">list</title>
+          </block>
+        </value>
+      </block>
+      <block type="lists_setIndex" inline="true">
+        <mutation at="true"></mutation>
+        <title name="MODE">SET</title>
+        <title name="WHERE">FROM_START</title>
+        <value name="LIST">
+          <block type="variables_get">
+            <title name="VAR">list</title>
+          </block>
+        </value>
+      </block>
+      <block type="lists_getSublist" inline="true">
+        <mutation at1="true" at2="true"></mutation>
+        <title name="WHERE1">FROM_START</title>
+        <title name="WHERE2">FROM_START</title>
+        <value name="LIST">
+          <block type="variables_get">
+            <title name="VAR">list</title>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="Variables">
+      <block type="variables_set" inline="false">
+        <title name="VAR">item</title>
+      </block>
+      <block type="variables_get">
+        <title name="VAR">item</title>
+      </block>
+    </category>
+    <!--<category name="Procedures">
+      <block type="procedures_defnoreturn"  >
+        <mutation></mutation>
+        <title name="NAME">do something</title>
+      </block>
+      <block type="procedures_defreturn" inline="false"  >
+        <mutation></mutation>
+        <title name="NAME">do something2</title>
+      </block>
+      <block type="procedures_ifreturn" inline="true"  >
+        <mutation value="1"></mutation>
+      </block>
+      TODO - need to auto-add calls here??
+    </category> -->
+    <category name="Espruino" disable_if="smartibot">
+      <block type="espruino_getTime"></block>
+      <block type="espruino_pin"></block>
+      <block type="espruino_watch">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">BTN1</title></block></value>
+      </block>
+      <block type="espruino_digitalWrite">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">LED1</title></block></value>
+      </block>
+      <block type="espruino_digitalPulse">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">LED1</title></block></value>
+        <value name="VAL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value>
+        <value name="TIME"><block type="math_number"><title name="NUM">100</title></block></value>
+      </block>
+      <block type="espruino_digitalRead">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">BTN1</title></block></value>
+      </block>
+      <block type="espruino_analogWrite">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">A1</title></block></value>
+      </block>
+      <block type="espruino_analogRead">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">A0</title></block></value>
+      </block>
+      <block type="espruino_pinMode">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">D0</title></block></value>
+      </block>
+      <block type="espruino_code">
+      </block>
+      <block type="espruino_jsexpression">
+      </block>
+    </category>
+    <category name="Hardware" disable_if="smartibot">
+      <block type="hw_servoMove">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">B13</title></block></value>
+        <value name="VAL"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="hw_servoStop">
+        <value name="PIN"><block type="espruino_pin"><title name="PIN">B13</title></block></value>
+      </block>
+      <block type="hw_ultrasonic">
+        <value name="TRIG"><block type="espruino_pin"><title name="PIN">B4</title></block></value>
+        <value name="ECHO"><block type="espruino_pin"><title name="PIN">B3</title></block></value>
+      </block>
+    </category>
+    <category name="Graphics" disable_if="smartibot">
+      <block type="gfx_clear">
+      </block>
+      <block type="gfx_flip">
+      </block>
+      <block type="gfx_setFont">
+        <value name="SIZE"><block type="math_number"><title name="NUM">2</title></block></value>
+      </block>
+      <block type="gfx_setColor">
+      </block>
+      <block type="gfx_setBgColor">
+      </block>
+      <block type="gfx_drawString">
+        <value name="TEXT"><block type="text"><title name="TEXT">Hello</title></block></value>
+        <value name="X"><block type="math_number"><title name="NUM">0</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">0</title></block></value>
+      </block>
+      <block type="gfx_moveTo">
+        <value name="X"><block type="math_number"><title name="NUM">0</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">0</title></block></value>
+      </block>
+      <block type="gfx_lineTo">
+        <value name="X"><block type="math_number"><title name="NUM">100</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">100</title></block></value>
+      </block>
+      <block type="gfx_draw">
+        <value name="X"><block type="math_number"><title name="NUM">20</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">20</title></block></value>
+        <value name="X2"><block type="math_number"><title name="NUM">40</title></block></value>
+        <value name="Y2"><block type="math_number"><title name="NUM">40</title></block></value>
+      </block>
+      <block type="gfx_image">
+        <value name="X"><block type="math_number"><title name="NUM">20</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">20</title></block></value>
+      </block>
+    </category>
+    <category name="Menus" disable_if="smartibot">
+      <block type="menu_message">
+        <value name="TEXT"><block type="text"><title name="TEXT">Hello</title></block></value>
+      </block>
+      <block type="menu_alert">
+        <value name="TEXT"><block type="text"><title name="TEXT">Hello</title></block></value>
+      </block>
+      <block type="menu_prompt">
+        <value name="TEXT"><block type="text"><title name="TEXT">Hello</title></block></value>
+      </block>
+    </category>
+    <!-- Bangle.js -->
+    <category name="Bangle.js" disable_if="smartibot">
+      <block type="bangle_beep"></block>
+      <block type="bangle_buzz"></block>
+      <block type="bangle_turnon"></block>
+      <block type="bangle_turnoff"></block>
+      <block type="bangle_on"></block>
+      <block type="bangle_result_bool"></block>
+      <block type="bangle_result_number"></block>
+    </category>
+    <category name="Robot" enable_if="robot">
+      <label text="&#39;motor(l,r)&#39; must be defined in .boot0 for this"></label>
+      <block type="robot_fwd">
+        <value name="VAL"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="robot_back">
+        <value name="VAL"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="robot_left">
+        <value name="VAL"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+      <block type="robot_right">
+        <value name="VAL"><block type="math_number"><title name="NUM">1</title></block></value>
+      </block>
+    </category>
+    <!-- Nordic Thingy:52 -->
+    
+   
+
+    <category name="Bluetooth" enable_if="bluetooth">
+      <block type="ble_connected"></block>
+      <block type="ble_disconnected"></block>
+
+      <block type="ble_uart_write">
+        <value name="VAL"><block type="text"><title name="TEXT">LED.toggle()</title></block></value>
+        <value name="DEV"><block type="ble_dev_name"></block></value>
+      </block>
+      <block type="ble_advertise">
+        <value name="VAL"><block type="text"><title name="TEXT">Hello</title></block></value>
+      </block>
+      <block type="ble_on_advertise"></block>
+
+      <block type="ble_dev_name"></block>
+      <block type="ble_dev_prefix"></block>
+      <block type="ble_dev_address"></block>
+
+      <block type="ble_characteristic"></block>
+      <block type="ble_characteristic_dropdown"></block>
+
+      <block type="ble_setchar">
+        <value name="CHAR"><block type="ble_characteristic_dropdown"></block></value>
+        <value name="DEV"><block type="ble_dev_name"></block></value>
+      </block>
+      <block type="ble_getchar">
+        <value name="CHAR"><block type="ble_characteristic_dropdown"></block></value>
+        <value name="DEV"><block type="ble_dev_name"></block></value>
+      </block>
+      <block type="ble_write">
+        <value name="CHAR"><block type="ble_characteristic_dropdown"></block></value>
+        <value name="VAL"><block type="math_number"><title name="NUM">50</title></block></value>
+      </block>
+      <block type="ble_onwritten">
+        <value name="CHAR"><block type="ble_characteristic_dropdown"></block></value>
+      </block>
+      <block type="ble_value"></block>
+    </category>
+    <category name="Functions" custom="PROCEDURE"></category>
+  </xml>
+
+    <!-- Blockly initial code -->
+<xml id="blocklyInitial" style="display: none">
+  <block type="espruino_watch" inline="true"><title name="EDGE">rising</title><value name="PIN"><block type="espruino_pin"><title name="PIN">BTN1</title></block></value><statement name="DO"><block type="espruino_digitalWrite" inline="true"><value name="PIN"><block type="espruino_pin"><title name="PIN">LED1</title></block></value><value name="VAL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><next><block type="espruino_timeout" inline="true"><value name="SECONDS"><block type="math_number"><title name="NUM">1</title></block></value><statement name="DO"><block type="espruino_digitalWrite" inline="true"><value name="PIN"><block type="espruino_pin"><title name="PIN">LED1</title></block></value><value name="VAL"><block type="logic_boolean"><title name="BOOL">FALSE</title></block></value></block></statement></block></next></block></statement></block>
+</xml>
+<xml id="blocklyInitial_smartibot" style="display: none">
+
+</xml>
+
+  
+
+<div class="injectionDiv" dir="LTR"><div class="blocklyToolboxDiv" dir="LTR" style="left: 0px; height: 0px;"><div class="blocklyTreeRoot" id=":0" role="tree" aria-selected="false" aria-level="0" aria-labelledby=":0.label" aria-expanded="false" hidefocus="true" tabindex="0"><div class="blocklyTreeRow blocklyHidden" style="padding-left:0px;"><span style="display:inline-block;" class="" role="presentation"></span><span class="blocklyTreeLabel" id=":0.label"></span><span></span></div><div style="background-position:-100px 0;" role="group"><div class="" id=":1" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":1.label" aria-setsize="14" aria-posinset="1"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(91, 128, 165);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":1.label">Logic</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":2" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":2.label" aria-setsize="14" aria-posinset="2"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(91, 165, 91);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":2.label">Control</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":3" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":3.label" aria-setsize="14" aria-posinset="3"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(91, 103, 165);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":3.label">Math</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":4" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":4.label" aria-setsize="14" aria-posinset="4"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(91, 165, 140);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":4.label">Text</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":5" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":5.label" aria-setsize="14" aria-posinset="5"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(116, 91, 165);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":5.label">Lists</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":6" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":6.label" aria-setsize="14" aria-posinset="6"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":6.label">Variables</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":7" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":7.label" aria-setsize="14" aria-posinset="7"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":7.label">Espruino</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":8" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":8.label" aria-setsize="14" aria-posinset="8"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":8.label">Hardware</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":9" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":9.label" aria-setsize="14" aria-posinset="9"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":9.label">Graphics</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":a" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":a.label" aria-setsize="14" aria-posinset="10"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":a.label">Menus</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":b" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":b.label" aria-setsize="14" aria-posinset="11"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":b.label">Bangle.js</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":c" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":c.label" aria-setsize="14" aria-posinset="12"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":c.label">Robot</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":d" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":d.label" aria-setsize="14" aria-posinset="13"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":d.label">Bluetooth</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":e" role="treeitem" aria-selected="false" aria-level="1" aria-labelledby=":e.label" aria-setsize="14" aria-posinset="14"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(221, 221, 221);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":e.label">Functions</span><span></span></div><div style="background-position:-100px 0;display:none;" role="group"></div></div></div></div></div><svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="blocklySvg" width="0px" height="0px"><defs><filter id="blocklyEmbossFilter02494500264530264"><fegaussianblur in="SourceAlpha" stdDeviation="1" result="blur"></fegaussianblur><fespecularlighting in="blur" surfaceScale="1" specularConstant="0.5" specularExponent="10" lighting-color="white" result="specOut"><fepointlight x="-5000" y="-10000" z="20000"></fepointlight></fespecularlighting><fecomposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"></fecomposite><fecomposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"></fecomposite></filter><pattern id="blocklyDisabledPattern02494500264530264" patternUnits="userSpaceOnUse" width="10" height="10"><rect width="10" height="10" fill="#aaa"></rect><path d="M 0 0 L 10 10 M 10 0 L 0 10" stroke="#cc0"></path></pattern><pattern id="blocklyGridPattern02494500264530264" patternUnits="userSpaceOnUse" width="100" height="100" x="0" y="0"><line stroke-width="1" x1="0" y1="0.5" x2="1" y2="0.5"></line></pattern></defs><g class="blocklyWorkspace"><rect height="100%" width="100%" class="blocklyMainBackground" style="fill: url(&quot;#blocklyGridPattern02494500264530264&quot;);"></rect><g class="blocklyTrash" transform="translate(-82,-95)" style="opacity: 0.4;"><clippath id="blocklyTrashBodyClipPath6096476035925098"><rect width="47" height="44" y="16"></rect></clippath><image width="96" x="0" height="124" y="-32" clip-path="url(#blocklyTrashBodyClipPath6096476035925098)" xlink:href="media/sprites.png"></image><clippath id="blocklyTrashLidClipPath6096476035925098"><rect width="47" height="16"></rect></clippath><image width="96" x="0" height="124" y="-32" clip-path="url(#blocklyTrashLidClipPath6096476035925098)" xlink:href="media/sprites.png" transform="rotate(0,43,14)"></image></g><g class="blocklyBlockCanvas" transform="translate(0,0) scale(1)"></g><g class="blocklyBubbleCanvas" transform="translate(0,0) scale(1)"></g><rect height="15" width="15" class="blocklyScrollbarBackground" x="-15.5" y="-15.5"></rect></g></svg><svg class="blocklyScrollbarVertical blocklyMainWorkspaceScrollbar" width="15" height="0" style="transform: translate(-15.5px, 0.5px);"><g><rect class="blocklyScrollbarBackground" width="15" height="0"></rect><rect class="blocklyScrollbarHandle" rx="5" ry="5" width="10" x="2.5" height="0" y="0"></rect></g></svg><svg class="blocklyScrollbarHorizontal blocklyMainWorkspaceScrollbar" height="15" width="0" style="transform: translate(0.5px, -15.5px);"><g><rect class="blocklyScrollbarBackground" height="15" width="0"></rect><rect class="blocklyScrollbarHandle" rx="5" ry="5" height="10" y="2.5" width="0" x="0"></rect></g></svg><svg class="blocklyFlyout" style="display: none"><path class="blocklyFlyoutBackground"></path><g class="blocklyWorkspace"><g class="blocklyBlockCanvas"></g><g class="blocklyBubbleCanvas"></g></g></svg><svg class="blocklyScrollbarVertical blocklyFlyoutScrollbar" width="15"><g><rect class="blocklyScrollbarBackground" width="15"></rect><rect class="blocklyScrollbarHandle" rx="5" ry="5" width="10" x="2.5"></rect></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="blocklyBlockDragSurface"><g transform="translate(0,0) scale(1)"></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="blocklyWsDragSurface blocklyOverflowVisible"></svg></div><div class="blocklyWidgetDiv"></div><div class="blocklyTooltipDiv"></div></body></html>
